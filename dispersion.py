@@ -30,3 +30,51 @@ print("La desviación típica de las notas de lectura es {}".format((sum(lista_v
 
 print("Teniendo en cuenta que el rango es 1, dicha desviación típica implica que las notas no están especialmente dispersadas")
 
+lista_var_escritura = []
+
+for i in range(l):
+    lista_var_escritura.append((notas_escritura[i] - media_escritura)**2)
+print("La varianza de las notas de escritura es {}".format((sum(lista_var_escritura)/l)))
+
+print("La desviación típica de las notas de escritura es {}".format((sum(lista_var_escritura)/l)**0.5))
+
+print("Teniendo en cuenta que el rango es 1, dicha desviación típica implica que las notas no están especialmente dispersadas")
+
+# 3. CUARTILES Y RANGO INTERCUARTILICO
+
+print(" 3.1 CUARTILES")
+valor_q1 = int(l/4)
+valor_q3 = int(3*l/4)
+valor_medio = int(l/2)
+
+q1_mates = (notas_mates[valor_q1] + notas_mates[valor_q1 + 1])/2
+mediana_mates = (notas_mates[valor_medio] + notas_mates[valor_medio + 1])/2
+q3_mates = (notas_mates[valor_q3] + notas_mates[valor_q3 + 1])/2
+
+print("El 25% de los valores de mate son menores que {}".format(q1_mates))
+print("El 50% de los valores de mate son menores que {}".format(media_mates))
+print("El 75% de los valores de mate son menores que {}".format(q3_mates))
+
+q1_lectura = (notas_lectura[valor_q1] + notas_lectura[valor_q1 + 1])/2
+mediana_lectura = (notas_lectura[valor_medio] + notas_lectura[valor_medio + 1])/2
+q3_lectura = (notas_lectura[valor_q3] + notas_lectura[valor_q3 + 1])/2
+
+print("El 25% de los valores de lectura son menores que {}".format(q1_lectura))
+print("El 50% de los valores de lectura son menores que {}".format(media_lectura))
+print("El 75% de los valores de lectura son menores que {}".format(q3_lectura))
+
+q1_escritura = (notas_escritura[valor_q1] + notas_escritura[valor_q1 + 1])/2
+mediana_escritura = (notas_escritura[valor_medio] + notas_escritura[valor_medio + 1])/2
+q3_escritura = (notas_escritura[valor_q3] + notas_escritura[valor_q3 + 1])/2
+
+print("El 25% de los valores de escritura son menores que {}".format(q1_escritura))
+print("El 50% de los valores de escritura son menores que {}".format(media_escritura))
+print("El 75% de los valores de escritura son menores que {}".format(q3_escritura))
+
+print("3.2 RANGO INTERCUARTILICO")
+
+print("Rango intercuartílico mates = {}".format(q3_mates-q1_mates))
+print("Rango intercuartílico lectura = {}".format(q3_lectura-q1_lectura))
+print("Rango intercuartílico escritura = {}".format(q3_escritura-q1_escritura))
+
+# 4. OUTLIERS
