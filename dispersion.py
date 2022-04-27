@@ -1,5 +1,7 @@
 from analisis import max_value, min_value, notas_mates, notas_lectura, notas_escritura, l, media_mates, media_lectura, media_escritura
 
+
+
 import pandas as pd
 
 # 1. EL RANGO
@@ -100,3 +102,15 @@ for i in range(l):
         outliers_lectura.append(notas_lectura[i])
 
 print(outliers_lectura)
+
+limiteInferior_escritura = q1_escritura - (1.5 * (q3_escritura-q1_escritura))  
+limiteSuperior_escritura = q3_escritura + (1.5 * (q3_escritura-q1_escritura))
+
+outliers_escritura = []
+
+for i in range(l):
+    if notas_escritura[i] < limiteInferior_escritura or notas_escritura[i] > limiteSuperior_escritura:
+        outliers_escritura.append(notas_escritura[i])
+
+print(outliers_escritura)
+
