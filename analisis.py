@@ -14,7 +14,7 @@ for i in range (1,l):
     diccionario = {"notas_mates":notas_mates, "notas_lectura":notas_lectura, "notas_escritura":notas_escritura}
 print(l)
 
-#1. Cantidad de obserbaciones
+#1. Cantidad de observaciones
 
 print("- CANTIDAD DE OBSERVACIONES -")
 print("Cantidad de observaciones = {}".format(l))
@@ -93,4 +93,77 @@ mediana_escritura = (notas_escritura[valor_medio] + notas_escritura[valor_medio 
 print("La mediana de las notas de escritura  es: {}".format(mediana_escritura))
 
 # 5.MODA
+print("- MODA -")
+
+diccionario_conteo_mates = {}
+for numero in notas_mates:
+    clave = str(numero)
+   
+    if not clave in diccionario_conteo_mates:
+        
+        diccionario_conteo_mates[clave] = 1
     
+    else:
+        
+        diccionario_conteo_mates[clave] += 1
+
+frecuencia_mayor = 0
+numero_mas_repetido = notas_mates[0]
+
+for numero in diccionario_conteo_mates:
+    if diccionario_conteo_mates[numero] > frecuencia_mayor:
+        numero_mas_repetido = numero
+        frecuencia_mayor = diccionario_conteo_mates[numero]
+
+conteo = diccionario_conteo_mates[str(numero_mas_repetido)]
+print(f"La nota de mates más repetida es {numero_mas_repetido} (encontrado {conteo} ocasiones)")
+
+
+
+diccionario_conteo_lectura = {}
+for numero in notas_lectura:
+    clave = str(numero)
+   
+    if not clave in diccionario_conteo_lectura:
+        
+        diccionario_conteo_lectura[clave] = 1
+    
+    else:
+        
+        diccionario_conteo_lectura[clave] += 1
+
+frecuencia_mayor = 0
+numero_mas_repetido = notas_lectura[0]
+
+for numero in diccionario_conteo_lectura:
+    if diccionario_conteo_lectura[numero] > frecuencia_mayor:
+        numero_mas_repetido = numero
+        frecuencia_mayor = diccionario_conteo_lectura[numero]
+
+conteo = diccionario_conteo_lectura[str(numero_mas_repetido)]
+print(f"La nota de lectura más repetida es {numero_mas_repetido} (encontrado {conteo} ocasiones)")
+
+
+
+diccionario_conteo_escritura = {}
+for numero in notas_escritura:
+    clave = str(numero)
+   
+    if not clave in diccionario_conteo_escritura:
+        
+        diccionario_conteo_escritura[clave] = 1
+    
+    else:
+        
+        diccionario_conteo_escritura[clave] += 1
+
+frecuencia_mayor = 0
+numero_mas_repetido = notas_escritura[0]
+
+for numero in diccionario_conteo_escritura:
+    if diccionario_conteo_escritura[numero] > frecuencia_mayor:
+        numero_mas_repetido = numero
+        frecuencia_mayor = diccionario_conteo_escritura[numero]
+
+conteo = diccionario_conteo_escritura[str(numero_mas_repetido)]
+print(f"La nota de escritura más repetida es {numero_mas_repetido} (encontrado {conteo} ocasiones)")
