@@ -78,3 +78,25 @@ print("Rango intercuartílico lectura = {}".format(q3_lectura-q1_lectura))
 print("Rango intercuartílico escritura = {}".format(q3_escritura-q1_escritura))
 
 # 4. OUTLIERS
+limiteInferior_mates = q1_mates - (1.5 * (q3_mates-q1_mates))  
+limiteSuperior_mates = q3_mates + (1.5 * (q3_mates-q1_mates))
+
+outliers_mates = []
+
+for i in range(l):
+    if notas_mates[i] < limiteInferior_mates or notas_mates[i] > limiteSuperior_mates:
+        outliers_mates.append(notas_mates[i])
+
+print("Los outliers de mates son:")
+print(outliers_mates)
+
+limiteInferior_lectura = q1_lectura - (1.5 * (q3_lectura-q1_lectura))  
+limiteSuperior_lectura = q3_lectura + (1.5 * (q3_lectura-q1_lectura))
+
+outliers_lectura = []
+
+for i in range(l):
+    if notas_lectura[i] < limiteInferior_lectura or notas_lectura[i] > limiteSuperior_lectura:
+        outliers_lectura.append(notas_lectura[i])
+
+print(outliers_lectura)
